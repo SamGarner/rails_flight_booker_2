@@ -1,0 +1,10 @@
+<h3><i>FlightBooker</i> - Available Flights:</h3>
+<p>
+  <% @flights.each do |flight| %>
+    <%# formatted_date = flight.date.strftime(%F%T) %>
+    <%= "Departs: #{flight.departure.city}" %><br>
+    <%= "Arrives: #{flight.arrival.city}" %><br>
+    <%= "Takeoff: #{flight.formatted_date}"%><br> 
+    <%= "Duration: #{flight.duration} min" %><br><br>
+  <% end %>
+</p>
