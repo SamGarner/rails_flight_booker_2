@@ -1,4 +1,24 @@
 <h3><i>FlightBooker</i> - Available Flights:</h3>
+
+<%= form_with model: @flight, method: :get do |form| %>
+  <%= form.label :departure_id, "Departing:" %>
+  <%= form.select(:departure_id, @departure_options) %>
+  <%= form.label :arrival_id, "To:" %>  
+  <%= form.select(:arrival_id, @arrival_options) %><br>
+  <%= form.label :take_off, "Departing on:" %>
+  <%= form.select(:take_off, @date_options) %><br>
+  <%= form.label :passenger_count, "Number of tickets:" %>
+  <%= form.select(:passenger_count, @passenger_count_options) %><br>
+  <%= form.submit "Search" %>
+<% end %>
+
+<%# select(:flight, :departure_id, @departure_options) %>
+<%# select_tag(:arrival_id, options_for_select(@arrival_options)) %>
+
+<%# @flights.departure.city %>
+<%# @flights.arrival.city %>
+<%# @flights.formatted_date %>
+
 <p>
   <% @flights.each do |flight| %>
     <%# formatted_date = flight.date.strftime(%F%T) %>
